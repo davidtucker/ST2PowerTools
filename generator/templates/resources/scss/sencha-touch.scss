@@ -1,0 +1,36 @@
+@import 'sencha-touch/default/all';
+
+/*
+	You can comment out the line below to modify the base color for this stylesheet.
+*/
+//$base-color: #3b3102;
+
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-list-paging;
+@include sencha-list-pullrefresh;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+@include sencha-loading-spinner;
+
+/*
+	Include custom icons.  These names of these icons can be found in the
+	Sencha Touch SDK directory in the resources/themes/images/default/pictos
+	directory.
+*/
+@include pictos-iconmask('compass1');
+@include pictos-iconmask('settings7');
+@include pictos-iconmask('info_plain2');
+
+/*
+	Put in your application's custom styles here
+*/
