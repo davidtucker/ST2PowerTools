@@ -62,7 +62,7 @@ When you download the tools project from Github, you'll have a `liveTemplates/we
 For Mac: `/Users/YOUR_USERNAME/Library/Preferences/WebIDE10/templates`
 For Windows: `C:\Users\YOUR_USERNAME\.WebIde10\config\templates\`
 
-To utilize any of these live templates, press `CMD+J` on Mac or `CTRL+J' on PC and it will show you all of the available live templates for the current context.
+To utilize any of these live templates, press `CMD+J` on Mac or `CTRL+J` on PC and it will show you all of the available live templates for the current context.
 
 ### Installation and Usage for Eclipse
 
