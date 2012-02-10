@@ -38,7 +38,7 @@
 ##############
 
 # DIRECTORY WHERE TEMPLATE FILES ARE STORED
-SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates/templates"
+SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates"
 
 ############################################
 # ----- DO NOT EDIT BELOW THIS LINE ------#
@@ -246,6 +246,21 @@ function askForUserConfirmation {
 	fi
 }
 
+###
+# This function validates that the template directory (which is configured by the end user) has an index.html
+# and an app.js file.  This takes no parameters and will handle exiting out of the application if the directory
+# is not valid.
+###
+function validateTemplatesDirectory {
+	if [[ -f "$SENCHA_TEMPLATE_DIRECTORY/index.html" &&  -f "$SENCHA_TEMPLATE_DIRECTORY/app.js" ]]; then
+		echo -e "${COLOR_BLUE}The Templates Directory is valid.${COLOR_RESET}\n\n"
+		return 0
+	else
+		echo "${COLOR_RED}The template directory is not valid - it does not contain an index.html and app.js file.${COLOR_RESET}"
+		exit 0
+	fi
+}
+
 ##############
 #
 # ACTUAL APP FLOW
@@ -267,6 +282,9 @@ echo ""
 echo "This script generates the boilerplate code needed to start a Sencha Touch 2 project."
 echo "The code will be generated in the current working directory."
 echo "Output Path: $OUTPUT_DIRECTORY"
+
+# Validate templates directory
+validateTemplatesDirectory
 
 # Confirm with the user that they want to continue
 askForUserConfirmation "Do you want to proceed?"

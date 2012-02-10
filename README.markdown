@@ -30,6 +30,8 @@ Using the generator script is simple.  First, open a terminal and navigate to th
 
     generateSenchaTouch2Project.sh
 
+If you see the message `The template directory is not valid - it does not contain an index.html and app.js file` then you did not properly configure the template directory.  
+
 The script itself will guide you through the creation process by asking for three pieces of information:
 
 1.  Application Name - This is used as the title of your HTML page, and the variable can be configured to be used anywhere within your templates.
