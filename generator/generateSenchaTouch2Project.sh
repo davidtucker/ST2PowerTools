@@ -51,10 +51,18 @@ SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates"
 ##############
 
 # COLOR VARIABLES
+#
+# Color values will only be set if the term is defined and not 'dumb'
 
-COLOR_RED=$(tput bold)$(tput setaf 1)
-COLOR_BLUE=$(tput bold)$(tput setaf 4)
-COLOR_RESET=$(tput sgr0)
+if [ "$TERM" != "" ] && [ "$TERM" != "dumb" ]; then
+	COLOR_RED=$(tput bold)$(tput setaf 1)
+	COLOR_BLUE=$(tput bold)$(tput setaf 4)
+	COLOR_RESET=$(tput sgr0)
+else
+	COLOR_RED=""
+	COLOR_BLUE=""
+	COLOR_RESET=""
+fi
 
 # NAME VARIABLES
 
@@ -267,7 +275,7 @@ function validateTemplatesDirectory {
 #
 ##############
 
-clear
+#clear
 echo "----------------------------------"
 echo "${COLOR_BLUE}SENCHA TOUCH 2 PROJECT GENERATOR${COLOR_RESET}"
 echo "----------------------------------"
