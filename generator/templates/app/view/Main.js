@@ -4,7 +4,6 @@ Ext.define("%NAMESPACE_NAME%.view.Main", {
 
     config: {
         tabBarPosition: "bottom",
-        ui: "brown",
         items: [
             {
                 xtype: "container",
