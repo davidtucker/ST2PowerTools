@@ -53,7 +53,20 @@ The generator will copy over all files in your templates directory as scan each 
 
 ## Sencha Touch 2 Live Templates / Snippets
 
-__Coming Soon__
+The Live Templates provided as a part of this tools package makes it extremely easy to add the default boilerplate code for your views, stores, models, and controllers within your Sencha Touch 2 project.
+
+### Installation and Usage for JetBrains IDE's (WebStorm, PHPStorm, and IntelliJ)
+
+When you download the tools project from Github, you'll have a `liveTemplates/webstorm` directory.  Inside of this directory is the `Sencha Touch.xml` file that contains the live templates.  You will need to place this file in your IDE's template directory.  This directory can be seen below:
+
+For Mac: `/Users/YOUR_USERNAME/Library/Preferences/WebIDE10/templates`
+For Windows: `C:\Users\YOUR_USERNAME\.WebIde10\config\templates\`
+
+To utilize any of these live templates, press `CMD+J` on Mac or `CTRL+J' on PC and it will show you all of the available live templates for the current context.
+
+### Installation and Usage for Eclipse
+
+The live templates don't currently exist for Eclipse, but I may include them in the future.
 
 ## Reporting Issues & Improvements
 
