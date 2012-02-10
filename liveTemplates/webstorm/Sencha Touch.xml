@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="Sencha Touch">
+  <template name="seview" value="Ext.define(&quot;$APP$.view.$CLASSNAME$&quot;, {&#10;    extend: &quot;$PARENTCLASS$&quot;,&#10;    xtype: &quot;$XTYPE$&quot;,&#10;&#10;    config: {&#10;        layout: {&#10;            type: $LAYOUT_TYPE$&#10;        },&#10;        items: [&#10;            $END$&#10;        ]&#10;    }&#10;&#10;});" description="Sencha Touch 2 Default View" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASSNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARENTCLASS" expression="" defaultValue="Ext.Container" alwaysStopAt="true" />
+    <variable name="XTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LAYOUT_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="sefo" value="Ext.define(&quot;$NAMESPACE$.view.$VIEWNAME$&quot;, {&#10;    extend: &quot;Ext.form.Panel&quot;,&#10;    xtype: &quot;$XTYPE$&quot;,&#10;&#10;    config: {&#10;        items: [&#10;            {&#10;                xtype: &quot;fieldset&quot;,&#10;                title: &quot;$TITLE$&quot;,&#10;                defaults: {&#10;                    xtype: &quot;textfield&quot;,&#10;                    labelWidth: '110px'&#10;                },&#10;                items: [&#10;                    {&#10;                        name: &quot;$NAME$&quot;,&#10;                        label: &quot;$LABEL$&quot;,&#10;                        required: false,&#10;                        autoCapitalize: false&#10;&#10;                    }$END$&#10;                ]&#10;            },&#10;            {&#10;                xtype: &quot;button&quot;,&#10;                action: &quot;$SUBMITNAME$&quot;,&#10;                text: &quot;$SUBMITTEXT$&quot;&#10;            }&#10;&#10;        ]&#10;    }&#10;});" description="Sencha Touch 2 Form Panel with Fieldset" toReformat="true" toShortenFQNames="true">
+    <variable name="NAMESPACE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VIEWNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="XTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LABEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SUBMITNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SUBMITTEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="semod" value="Ext.define(&quot;$APP$.view.$CLASSNAME$&quot;, {&#10;    extend: &quot;Ext.data.Model&quot;,&#10;    idProperty: &quot;$IDPROP$&quot;,&#10;    &#10;    config: {&#10;        fields: [&#10;            {&#10;                name: &quot;$FIELDNAME$&quot;,&#10;                type: &quot;$FIELDTYPE$&quot;&#10;            }&#10;        ]&#10;    }&#10;});" description="Sencha Touch 2 Model" toReformat="true" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASSNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="IDPROP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FIELDNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FIELDTYPE" expression="" defaultValue="string" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="sesto" value="Ext.define(&quot;$APP$.store.$FILE$&quot;, {&#10;    extend: &quot;Ext.data.Store&quot;,&#10;    config: {&#10;        model: &quot;$MODEL$&quot;,&#10;        remoteFilter: false,&#10;        remoteSort: false,&#10;        autoLoad: false&#10;    }&#10;});" description="Sencha Touch 2 Store" toReformat="true" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE" expression="jsClassName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="secon" value="Ext.define(&quot;$APP$.controller.$CLASSNAME$&quot;, {&#10;    extend: &quot;Ext.app.Controller&quot;,&#10;&#10;    config: {&#10;        routes: {&#10;            $ROUTES$&#10;        },&#10;        refs: {&#10;            $REFS$&#10;        },&#10;        control: {&#10;            $CONTROL$&#10;        }&#10;    }&#10;    &#10;    $END$&#10;    &#10; });" description="Sencha Touch 2 Controller" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASSNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTES" expression="" defaultValue="'sampleRoute: &quot;route&quot;'" alwaysStopAt="true" />
+    <variable name="REFS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONTROL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="semapimport" value="&lt;script type=&quot;text/javascript&quot; src=&quot;http://maps.google.com/maps/api/js?libraries=places&amp;sensor=true&quot;&gt;&lt;/script&gt;" description="Sencha Touch 2 Map Import" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="semap" value="Ext.define(&quot;$NAMESPACE$.view.$VIEWNAME$&quot;, {&#10;    extend: &quot;Ext.Map&quot;,&#10;    xtype: &quot;$XTYPE$&quot;,&#10;&#10;    config: {&#10;        useCurrentLocation: true,&#10;        mapOptions: {&#10;            zoom: 14,&#10;            mapTypeId: google.maps.MapTypeId.ROADMAP,&#10;            navigationControl: true,&#10;            navigationControlOptions: {&#10;                style: google.maps.NavigationControlStyle.DEFAULT&#10;            }&#10;        }&#10;    }&#10;    &#10;    $END$&#10;&#10;});" description="Sencha Touch 2 Map View" toReformat="true" toShortenFQNames="true">
+    <variable name="NAMESPACE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VIEWNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="XTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>
+
