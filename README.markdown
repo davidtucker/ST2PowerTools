@@ -60,6 +60,7 @@ The Live Templates provided as a part of this tools package makes it extremely e
 When you download the tools project from Github, you'll have a `liveTemplates/webstorm` directory.  Inside of this directory is the `Sencha Touch.xml` file that contains the live templates.  You will need to place this file in your IDE's template directory.  This directory can be seen below:
 
 >For Mac: `/Users/YOUR_USERNAME/Library/Preferences/WebIDE10/templates`
+>
 >For Windows: `C:\Users\YOUR_USERNAME\.WebIde10\config\templates\`
 
 To utilize any of these live templates, press `CMD+J` on Mac or `CTRL+J` on PC and it will show you all of the available live templates for the current context.
