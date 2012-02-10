@@ -38,7 +38,7 @@
 ##############
 
 # DIRECTORY WHERE TEMPLATE FILES ARE STORED
-SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates"
+SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates/templates"
 
 ############################################
 # ----- DO NOT EDIT BELOW THIS LINE ------#
@@ -154,8 +154,8 @@ function getUserInput {
 function parseAndReplaceVariables {
 	sed -e "s;%SENCHA_TOUCH_RELATIVE_DIRECTORY%;$SENCHA_TOUCH_SDK_RELATIVE_PATH;" \
 		-e "s;%SENCHA_TOUCH_RELATIVE_DIRECTORY_SPLIT%;$SENCHA_TOUCH_SDK_RELATIVE_PATH_SPLIT;" \
-		-e "s;%APPLICATION_NAME%;$SENCHA_TOUCH_APP_NAME;" \
-		-e "s;%NAMESPACE_NAME%;$SENCHA_TOUCH_APP_NAME;" \
+		-e "s;%APPLICATION_NAME%;$APP_NAME;" \
+		-e "s;%NAMESPACE_NAME%;$APP_NAMESPACE;" \
 		$SENCHA_TEMPLATE_DIRECTORY/$1 > $OUTPUT_DIRECTORY/$1
 }
 
