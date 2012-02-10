@@ -50,6 +50,12 @@ SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates/templates"
 #
 ##############
 
+# COLOR VARIABLES
+
+COLOR_RED=$(tput bold)$(tput setaf 1)
+COLOR_BLUE=$(tput bold)$(tput setaf 4)
+COLOR_RESET=$(tput sgr0)
+
 # NAME VARIABLES
 
 APP_NAME=""
@@ -99,7 +105,6 @@ OUTPUT_DIRECTORY=$(pwd)
 ###
 GET_USER_INPUT_RESULT=""
 function getUserInput {
-	echo -e "\n----------------------------\n"
 	echo -e "$4\n"
 	
 	if [[ "$2" =~ $3 ]]; then
@@ -117,10 +122,9 @@ function getUserInput {
 	fi
 	
 	if [[ "$USER_INPUT_VALUE" =~ $3 ]]; then
-		echo "Passed Validation"
 		GET_USER_INPUT_RESULT=$USER_INPUT_VALUE
 	else
-		echo "Invalid Entry - please try again"
+		echo -e "${COLOR_RED}INVALID ENTRY - PLEASE TRY AGAIN${COLOR_RESET} \n"
 		getUserInput "$1" "$2" "$3" "$4"
 	fi
 }
@@ -182,13 +186,13 @@ function processAllTemplates {
 # the parent directory).  It will output appropriate messages if this validation fails.
 ###
 function validateSenchaTouchSDKDirectory {
-	echo "Validating the SDK Directory"
 	cd $OUTPUT_DIRECTORY
 	echo "Checking if file exists: $SENCHA_TOUCH_SDK_RELATIVE_PATH/touch.jsb3"
 	if [[ -f "$SENCHA_TOUCH_SDK_RELATIVE_PATH/touch.jsb3" ]]; then
+		echo "${COLOR_BLUE}The SDK Directory has been validated.${COLOR_RESET}"
 		return 0;
 	else
-		echo "The SDK Directory did not contain the touch.jsb3 file.  Please try again."
+		echo "${COLOR_RED}The SDK Directory did not contain the touch.jsb3 file.  Please try again.${COLOR_RESET}"
 		return 1;
 	fi
 }
@@ -205,7 +209,6 @@ function getSenchaSDKDirectory {
 	validateSenchaTouchSDKDirectory
 	if [ $? -eq 0 ]; then
 		splitDirectoryIntoComponentParts
-		echo "Split Path $SENCHA_TOUCH_SDK_RELATIVE_PATH_SPLIT"
 		return 0;
 	else
 		getSenchaSDKDirectory
@@ -251,15 +254,19 @@ function askForUserConfirmation {
 
 clear
 echo "----------------------------------"
-echo "SENCHA TOUCH 2 PROJECT GENERATOR"
+echo "${COLOR_BLUE}SENCHA TOUCH 2 PROJECT GENERATOR${COLOR_RESET}"
 echo "----------------------------------"
+echo ""
 echo "Developed by David Tucker (http://www.davidtucker.net)"
-echo "Project Hosted on Github"
-echo "This code is licensed with an MIT License which can be view at 
+echo "Project Hosted on Github (https://github.com/davidtucker/senchaTouch2Tools)"
+echo "This code is licensed with an MIT License which can be viewed at 
 http://www.opensource.org/licenses/mit-license.php"
+echo ""
 echo "----------------------------------"
+echo ""
 echo "This script generates the boilerplate code needed to start a Sencha Touch 2 project."
 echo "The code will be generated in the current working directory."
+echo "Output Path: $OUTPUT_DIRECTORY"
 
 # Confirm with the user that they want to continue
 askForUserConfirmation "Do you want to proceed?"
@@ -267,35 +274,34 @@ if [ $USER_CONFIRMATION_VALUE == "n" ]; then
 	exit 0
 fi
 
-echo "----------------------------------"
-echo "Output Path: $OUTPUT_DIRECTORY"
-echo "Current Directory: ${PWD##*/}"
-echo "----------------------------------"
+echo -e "\n\n"
 
 # Get the Name
 echo "APPLICATION NAME"
-echo -e "\n"
+echo "----------------------------------"
 getUserInput "Please enter a name for your application" "$APP_NAME_DEFAULT" "$APP_NAME_ACCEPTABLE_REGEX" "$APP_NAME_RULES"
 APP_NAME=$GET_USER_INPUT_RESULT
+echo -e "\n"
 
 # Get the Namespace
 echo "APPLICATION NAMESPACE"
-echo -e "\n"
+echo "----------------------------------"
 getUserInput "Please enter a namespace name" "$APP_NAME" "$APP_NAMESPACE_ACCEPTABLE_REGEX" "$APP_NAMESPACE_RULES"
 APP_NAMESPACE=$GET_USER_INPUT_RESULT
+echo -e "\n"
 
 # Get the Sencha Touch Relative Path
 echo "SENCHA TOUCH SDK DIRECTORY"
-echo -e "\n"
+echo "----------------------------------"
 getSenchaSDKDirectory
+echo -e "\n"
 
 # Process all templates and generate parsed versions in output directory
 echo "PROCESSING FILES AND TEMPLATES"
-echo -e "\n"
 processAllTemplates
 
 # We're all done
-echo -e "\n\n\n"
+echo -e "\n"
 echo "Your code has been generated and placed in $OUTPUT_DIRECTORY"
 
 exit 0
