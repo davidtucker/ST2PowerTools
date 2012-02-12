@@ -40,7 +40,7 @@ The script itself will guide you through the creation process by asking for thre
 2.  Application Namespace - This is the value that will become your application namespace and it will be used within each of your JavaScript files.
 3.  Sencha Touch 2 SDK Relative Path - This is the relative path from the current directory to the Sencha Touch SDK 2 Directory.
 
-After entering these three pieces of information, your project will be generated into the current directory based on the templates from the templates directory.
+After entering these three pieces of information, your project will be generated into the current directory based on the templates from the templates directory.  You may also optionally have the generator open a new Terminal window and start monitoring your `scss` directory with compass.
 
 ### Advanced Usage
 

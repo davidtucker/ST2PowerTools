@@ -255,6 +255,17 @@ function askForUserConfirmation {
 }
 
 ###
+# This function will wait until the user presses ENTER before proceeding (by simply using the read command).
+# This function takes one parameter:
+#
+# 1: The message to present to the end user before calling the read command
+###
+function awaitEnterKey {
+	echo "$1"
+	read ENTER_TO_CONTINUE_VALUE
+}
+
+###
 # This function validates that the template directory (which is configured by the end user) has an index.html
 # and an app.js file.  This takes no parameters and will handle exiting out of the application if the directory
 # is not valid.
@@ -267,6 +278,20 @@ function validateTemplatesDirectory {
 		echo "${COLOR_RED}The template directory is not valid - it does not contain an index.html and app.js file.${COLOR_RESET}"
 		exit 0
 	fi
+}
+
+###
+# This function uses AppleScript to open a new terminal window and automatically start compass watching the
+# resources/scss folder in the newly generated project.  This takes no parameters, but it uses the OUTPUT_DIRECTORY
+# variable.
+###
+function launchNewTerminalWindowForCompass {
+	SCRIPT_TO_EXEC="compass watch \\\"$OUTPUT_DIRECTORY/resources/scss\\\""
+	osascript <<END 
+tell application "Terminal"
+	do script "$SCRIPT_TO_EXEC"
+end tell
+END
 }
 
 ##############
@@ -329,5 +354,21 @@ processAllTemplates
 # We're all done
 echo -e "\n"
 echo "Your code has been generated and placed in $OUTPUT_DIRECTORY"
+
+# Check to see if the user wants to have compass start monitoring scss directory in new Terminal.
+echo -e "\n"
+askForUserConfirmation "Would you like to setup compass to compile your CSS now?"
+if [ $USER_CONFIRMATION_VALUE == "y" ]; then
+	echo -e "\nA new terminal window will open and start monitoring your scss directory for changes with compass."
+	echo -e "Depending on your current configuration this Terminal window may open in the background. To stop"
+	echo -e "monitoring, simply close the Terminal window.\n"
+	echo -e "You may restart this process at any time by simply typing the following into a terminal window:"
+	echo -e "\ncompass watch \"$OUTPUT_DIRECTORY/resources/scss\"\n"
+	awaitEnterKey "Press ENTER to launch the new terminal window and begin monitoring your scss directory with compass..."
+	launchNewTerminalWindowForCompass
+fi
+
+echo -e "\nST2 Power Tools Project Generator - Generation Complete."
+echo -e "Goodbye."
 
 exit 0
