@@ -275,7 +275,7 @@ function validateTemplatesDirectory {
 #
 ##############
 
-#clear
+clear
 echo "----------------------------------"
 echo "${COLOR_BLUE}SENCHA TOUCH 2 PROJECT GENERATOR${COLOR_RESET}"
 echo "----------------------------------"
