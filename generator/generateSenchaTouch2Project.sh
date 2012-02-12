@@ -102,6 +102,15 @@ OUTPUT_DIRECTORY=$(pwd)
 ##############
 
 ###
+# This function exits the running script and informs the user that the generator did not complete its tasks
+# as planned.
+###
+function exitOnError {
+	echo -e "\n${COLOR_RED}The generator DID NOT COMPLETE due to an error or misconfiguration.  Please correct issue and rerun.${COLOR_RESET}"
+	exit 1
+}
+
+###
 # This function is designed to handle much of the logic involved with asking the user for a value
 # and then validating that value.  It takes 4 parameters:
 #
@@ -135,6 +144,20 @@ function getUserInput {
 		echo -e "${COLOR_RED}INVALID ENTRY - PLEASE TRY AGAIN${COLOR_RESET} \n"
 		getUserInput "$1" "$2" "$3" "$4"
 	fi
+}
+
+###
+# This function determines if compass is available on the command line (it has to be in the PATH).  If it isn't
+# it calls the exitOnError function which exits the running script.
+###
+function doesCompassExist {
+	command -v compasss > /dev/null 2>&1
+	if [ $? -ne 0 ]; then
+		echo -e "${COLOR_RED}You must have compass installed and accessible on the command line.${COLOR_RESET}"
+		echo -e "For more information, visit: http://compass-style.org/install/"
+		exitOnError
+	fi
+	 
 }
 
 ###
@@ -272,11 +295,11 @@ function awaitEnterKey {
 ###
 function validateTemplatesDirectory {
 	if [[ -f "$SENCHA_TEMPLATE_DIRECTORY/index.html" &&  -f "$SENCHA_TEMPLATE_DIRECTORY/app.js" ]]; then
-		echo -e "${COLOR_BLUE}The Templates Directory is valid.${COLOR_RESET}\n\n"
+		echo -e "${COLOR_BLUE}Templates Directory is valid.${COLOR_RESET}\n\n"
 		return 0
 	else
 		echo "${COLOR_RED}The template directory is not valid - it does not contain an index.html and app.js file.${COLOR_RESET}"
-		exit 0
+		exitOnError
 	fi
 }
 
@@ -318,6 +341,9 @@ echo "Output Path: $OUTPUT_DIRECTORY"
 
 # Validate templates directory
 validateTemplatesDirectory
+
+# Check if compass is installed
+doesCompassExist
 
 # Confirm with the user that they want to continue
 askForUserConfirmation "Do you want to proceed?"
