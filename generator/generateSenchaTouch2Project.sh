@@ -352,12 +352,15 @@ echo "PROCESSING FILES AND TEMPLATES"
 processAllTemplates
 
 # We're all done
-echo -e "\n"
 echo "Your code has been generated and placed in $OUTPUT_DIRECTORY"
+
+# Compile Spreadsheet
+echo -e "\nInitially compiling Stylesheet"
+compass compile "$OUTPUT_DIRECTORY/resources/scss"
 
 # Check to see if the user wants to have compass start monitoring scss directory in new Terminal.
 echo -e "\n"
-askForUserConfirmation "Would you like to setup compass to compile your CSS now?"
+askForUserConfirmation "Would you like to setup compass to monitor your CSS now?"
 if [ $USER_CONFIRMATION_VALUE == "y" ]; then
 	echo -e "\nA new terminal window will open and start monitoring your scss directory for changes with compass."
 	echo -e "Depending on your current configuration this Terminal window may open in the background. To stop"
