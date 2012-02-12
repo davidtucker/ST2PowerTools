@@ -1,4 +1,6 @@
-The Sencha Touch 2 Tools project consists of a collection of tools designed to make you more productive with your Sencha Touch 2 projects.  Currently, this consists of two separate tools: the Sencha Touch 2 Project Generator and a collection of Sencha Touch 2 live templates for the JetBrains family of IDE's.
+# ST2 Power Tools
+
+The ST2 Power Tools project consists of a collection of tools designed to make you more productive with your Sencha Touch 2 projects.  Currently, this consists of two separate tools: the Sencha Touch 2 Project Generator and a collection of Sencha Touch 2 live templates for the JetBrains family of IDE's.
 
 ## Sencha Touch 2 Project Generator
 
@@ -71,7 +73,7 @@ The live templates don't currently exist for Eclipse, but I may include them in 
 
 ## Reporting Issues & Improvements
 
-If you discover any bugs or wish to request a feature, please [Submit a New Issue](https://github.com/davidtucker/senchaTouch2Tools/issues/new) on Github.
+If you discover any bugs or wish to request a feature, please [Submit a New Issue](https://github.com/davidtucker/ST2PowerTools/issues/new) on Github.
 
 
 

@@ -8,7 +8,7 @@
 
 # David Tucker
 # Blog: http://www.davidtucker.net/
-# Source: https://github.com/davidtucker/senchaTouch2Tools
+# Source: https://github.com/davidtucker/ST2PowerTools
 
 ##############
 #
