@@ -151,7 +151,7 @@ function getUserInput {
 # it calls the exitOnError function which exits the running script.
 ###
 function doesCompassExist {
-	command -v compasss > /dev/null 2>&1
+	command -v compass > /dev/null 2>&1
 	if [ $? -ne 0 ]; then
 		echo -e "${COLOR_RED}You must have compass installed and accessible on the command line.${COLOR_RESET}"
 		echo -e "For more information, visit: http://compass-style.org/install/"
