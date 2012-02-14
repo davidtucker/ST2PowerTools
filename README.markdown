@@ -2,9 +2,9 @@
 
 The ST2 Power Tools project consists of a collection of tools designed to make you more productive with your Sencha Touch 2 projects.  Currently, this consists of two separate tools: the Sencha Touch 2 Project Generator and a collection of Sencha Touch 2 live templates for the JetBrains family of IDE's.
 
-You can view a full demo of the current version in action: (Create a Complete Sencha Touch 2 Application in Just Minutes)[http://davidtucker.net/blog/view/create_a_complete_sencha_touch_2_application_in_just_minutes].
+You can view a full demo of the current version in action: [Create a Complete Sencha Touch 2 Application in Just Minutes](http://davidtucker.net/blog/view/create_a_complete_sencha_touch_2_application_in_just_minutes).
 
-> As an important note, you need to properly setup your Mac for Sencha Touch 2 development before using these tools.  You can view my complete post on (Getting Setup For Sencha Touch 2 Development on Your Mac)[http://davidtucker.net/blog/view/getting_setup_for_sencha_touch_2_development_on_your_mac] for more information on how to do this.
+> As an important note, you need to properly setup your Mac for Sencha Touch 2 development before using these tools.  You can view my complete post on [Getting Setup For Sencha Touch 2 Development on Your Mac](http://davidtucker.net/blog/view/getting_setup_for_sencha_touch_2_development_on_your_mac) for more information on how to do this.
 
 ## Sencha Touch 2 Project Generator
 
@@ -46,7 +46,7 @@ The script itself will guide you through the creation process by asking for thre
 
 After entering these three pieces of information, your project will be generated into the current directory based on the templates from the templates directory.  You may also optionally have the generator open a new Terminal window and start monitoring your `scss` directory with compass.
 
-To view a full session with the generator, (view this Gist)[https://gist.github.com/1827581].
+To view a full session with the generator, [view this Gist](https://gist.github.com/1827581).
 
 ### Advanced Usage
 
