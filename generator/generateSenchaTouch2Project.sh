@@ -38,7 +38,7 @@
 ##############
 
 # DIRECTORY WHERE TEMPLATE FILES ARE STORED
-SENCHA_TEMPLATE_DIRECTORY="/Projects/LiveTemplates/templates"
+SENCHA_TEMPLATE_DIRECTORY=`dirname $0`"/templates"
 
 ############################################
 # ----- DO NOT EDIT BELOW THIS LINE ------#
